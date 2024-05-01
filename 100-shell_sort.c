@@ -6,13 +6,22 @@
 */
 void shell_sort(int *array, size_t size)
 {
-	size_t n;
-	size_t i, j;
+	size_t i, j, n;
 	int temp;
 
-	if (array == NULL || size <= 2)
+	if (array == NULL || size <= 1)
 		return;
 
+	if (size == 2)
+	{
+		if (array[0] > array[1])
+		{
+			temp = array[0];
+			array[0] = array[1];
+			array[1] = temp;
+		}
+		return;
+	}
 	n = 0;
 	while (n < size / 3)
 	{
@@ -37,5 +46,3 @@ void shell_sort(int *array, size_t size)
 		n /= 3;
 	}
 }
-
-
