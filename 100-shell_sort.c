@@ -19,6 +19,7 @@ void shell_sort(int *array, size_t size)
 			temp = array[0];
 			array[0] = array[1];
 			array[1] = temp;
+			print_array(array, size);
 		}
 		return;
 	}
